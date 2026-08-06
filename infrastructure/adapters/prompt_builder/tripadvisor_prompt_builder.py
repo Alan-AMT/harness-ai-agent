@@ -1,3 +1,5 @@
+import os
+from infrastructure.adapters.tools.currency import FastForexAPI
 from typing import Any
 from domain.models.prompt import Prompt
 from domain.models.chat import ChatSession
@@ -211,7 +213,8 @@ class TripAdvisorPromptBuilderAdapter(PromptBuilderPort):
             #TODO: Implementar Tools - probablemente haya que convertir a string porque ahoirta esta en gemini specific
             # tools=[],
             tools={
-                "rag": RAGTool()
+                "rag": RAGTool(),
+                "currency_exchange": FastForexAPI()
             },
             #TODO: Implementar RAG  - probablemente haya que convertir a string porque ahoirta esta en gemini specific
             rag_context=dict(),

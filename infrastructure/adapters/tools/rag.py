@@ -1,6 +1,5 @@
 from domain.ports.tool import AgentTool
 import os
-import copy
 from dotenv import load_dotenv
 from google import genai
 from google.genai import types
